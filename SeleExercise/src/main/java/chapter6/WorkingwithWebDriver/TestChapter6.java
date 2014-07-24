@@ -24,7 +24,7 @@ public class TestChapter6 {
 		profile.setPreference("browser.startup.homepage","http://book.theautomatedtester.co.uk/chapter4");
 		driver = new FirefoxDriver(profile);*/
 		
-/*        System.setProperty("webdriver.chrome.driver", "C:\\01WorkDir\\chromedriver_win32\\chromedriver.exe");
+/*      System.setProperty("webdriver.chrome.driver", "C:\\01WorkDir\\chromedriver_win32\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.setBinary("C:\\Users\\hzhang8\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe");
 		driver = new ChromeDriver(options);*/
