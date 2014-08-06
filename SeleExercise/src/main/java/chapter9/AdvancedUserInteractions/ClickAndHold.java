@@ -9,34 +9,29 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 
-public class ContextClickExercise {
+public class ClickAndHold {
 
 	WebDriver driver;
 	
 	@Before
 	public void setUp(){
+		
 		System.setProperty("webdriver.firefox.bin", "C:\\Users\\hzhang8\\AppData\\Local\\Mozilla Firefox\\firefox.exe");
 		driver = new FirefoxDriver();
-		
-		driver.get("http://www.theautomatedtester.co.uk/demo1.html");		
+		driver.get("http://www.theautomatedtester.co.uk/demo1.html");
 	}
-	
-	/*@After
+   
+/*	@After
 	public void tearDown(){
 		driver.quit();
 	}*/
 	
 	@Test
-	public void drawImageOnCanvas(){
+	public void clickAndHold(){
 		WebElement element = driver.findElement(By.id("tutorial"));
+		Actions builder  = new Actions(driver);
+		Action clickAndHold = builder.clickAndHold(element).moveByOffset(-40, -60).moveByOffset(20, 20).moveByOffset(100, 150).release(element).build();
+		clickAndHold.perform();
 		
-		Actions builder = new Actions(driver);
-		
-		Action drawImage = builder.clickAndHold(element).moveByOffset(0, 100).moveByOffset(50, 0).moveByOffset(0, -100).moveByOffset(-50, 0).release().build();
-		Action contextClick = builder.contextClick(element).build();
-		
-
-		drawImage.perform();
-		contextClick.perform();
 	}
 }
